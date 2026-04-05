@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), serif;
+}
+
+::selection {
+  background: rgba(191, 122, 51, 0.22);
+}
+
+@layer components {
+  .shell-card {
+    @apply rounded-[2rem] border border-bark/10 bg-white/70 p-6 shadow-card backdrop-blur-sm;
+  }
+
+  .book-card {
+    @apply shell-card overflow-hidden rounded-[1.75rem] p-0 transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .eyebrow {
+    @apply text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-bark/70;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-ink sm:text-4xl;
+  }
+
+  .input {
+    @apply w-full rounded-full border border-bark/15 bg-white/80 px-5 py-3 text-sm text-ink outline-none transition focus:border-amber focus:ring-2 focus:ring-amber/20;
+  }
+
+  .textarea {
+    @apply w-full rounded-[1.5rem] border border-bark/15 bg-white/80 px-5 py-4 text-sm text-ink outline-none transition focus:border-amber focus:ring-2 focus:ring-amber/20;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-3 text-sm font-semibold text-paper transition hover:bg-bark;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-bark/15 bg-white/70 px-5 py-3 text-sm font-semibold text-ink transition hover:border-bark/30 hover:bg-white;
+  }
+}
